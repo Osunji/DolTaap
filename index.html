@@ -20,14 +20,20 @@
     <meta name="keywords" content="돌탑, 탑쌓기, DolTaap, 퍼즐, 게임">
     <!-- 기타 메타 태그 -->
 	
-	 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   
    <style>
+   @font-face {
+		font-family: 'Katuri';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+
 	 body, html {
 		margin: 0;
 		padding: 0;
 		height: 100%;
 		display: flex;
+		font-family: 'Katuri', sans-serif;
 		justify-content: center;
 		align-items: center;
 		background-color: #e0f7fa;
@@ -46,23 +52,11 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Katuri', sans-serif;
 		font-size: 2rem;
 		color: #0097a7;
-		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-		animation: pulse 1.5s infinite alternate;
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 		z-index: 2;
-	}
-
-	@keyframes pulse {
-		from {
-			transform: scale(1) translate(-50%, -50%);
-			opacity: 0.7;
-		}
-		to {
-			transform: scale(1.1) translate(-50%, -50%);
-			opacity: 1;
-		}
 	}
 	
 	#unity-canvas{
