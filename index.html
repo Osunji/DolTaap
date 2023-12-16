@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돌탑 - DolTaap v0.1</title>
+	
+    <!-- Open Graph 메타 정보 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="돌탑 - DolTaap">
+    <meta property="og:description" content="콤보가 끊기지 않게 탑을 쌓는 것은 불가능한 것일까?">
+    <meta property="og:image" content="Img/ICON.png">
+    <meta property="og:url" content="www.doltaap.site">
+
+    <!-- 추가 메타 정보 -->
+    <meta name="description" content="돌탑을 쌓는 게임">
+    <meta name="keywords" content="돌탑, 탑쌓기, DolTaap, 퍼즐, 게임">
+    <!-- 기타 메타 태그 -->
+	
+	 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   
+   <style>
+	 body, html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #e0f7fa;
+	}
+
+	#unity-container {
+		position: relative;
+		width: 360px;
+		height: 720px;
+		background: #FFFFFF;
+		z-index: 1;
+	}
+
+	.loading-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'Roboto', sans-serif;
+		font-size: 2rem;
+		color: #0097a7;
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+		animation: pulse 1.5s infinite alternate;
+		z-index: 2;
+	}
+
+	@keyframes pulse {
+		from {
+			transform: scale(1) translate(-50%, -50%);
+			opacity: 0.7;
+		}
+		to {
+			transform: scale(1.1) translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+	
+	#unity-canvas{
+		width:360px;
+		height:720px;
+	}
+	
+	.share-buttons-container {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		display: flex;
+		gap: 10px; /* 버튼 사이의 간격 */
+	}
+
+	.share-button {
+		padding: 10px 15px;
+		background-color: #1DA1F2;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		font-size: 14px;
+		cursor: pointer;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+		outline: none;
+	}
+
+	.share-button:hover {
+		background-color: #1991DA;
+	}
+
+	.share-button:focus {
+		box-shadow: 0px 0px 6px rgba(29, 161, 242, 0.6);
+	}
+	
+	@media screen and (max-width: 768px) {
+		#unity-container {
+			width: 100%;
+			height: auto;
+		}
+	}
+    </style>
+  </head>
+  <body style="text-align: center">	
+    <div id="unity-container">
+        <canvas id="unity-canvas" width="360" height="720"></canvas>
+		
+		<div class="share-buttons-container">
+		<!--	<button id="twitter-share-button" class="share-button">Twitter</button>
+			<button id="facebook-share-button" class="share-button">Facebook</button> -->
+			<button id="copy-link-button" class="share-button">Share Link</button>
+			<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
+
+		</div>
+    </div>
+    <div class="loading-text">DolTaap GAME<br>IS NOW LOADING</div>
+	
+
+	<!-- Script -->
+	    <script src="Build/REL.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+	  
+	   createUnityInstance(document.querySelector("#unity-canvas"), {
+		dataUrl: "Build/REL.data",
+		frameworkUrl: "Build/REL.framework.js",
+		codeUrl: "Build/REL.wasm",
+		streamingAssetsUrl: "StreamingAssets",
+		companyName: "Osunji",
+		productName: "DolTaap",
+		productVersion: "0.1",
+	  }, (progress) => {
+		if (progress === 1) {
+		  // 로딩 완료 시 로딩 텍스트 숨기기
+		  document.querySelector('.loading-text').style.display = 'none';
+		}
+	  }).then((unityInstance) => {
+		// Unity 인스턴스가 준비된 후의 추가적인 설정 (필요한 경우)
+	  }).catch((error) => {
+		console.error("Unity instance loading error:", error);
+	  });	
+	  
+	  
+	  //공유------------------------
+	  /*document.getElementById('twitter-share-button').addEventListener('click', function() {
+		  window.open('https://twitter.com/share?url=' + encodeURIComponent(document.location.href) + '&text=' + encodeURIComponent(document.title), 'twitter-share-dialog', 'width=800,height=600');
+		});
+	  document.getElementById('facebook-share-button').addEventListener('click', function() {
+		  window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.location.href), 'facebook-share-dialog', 'width=800,height=600');
+		});
+	document.getElementById('copy-link-button').addEventListener('click', function() {
+		  navigator.clipboard.writeText(window.location.href)
+			.then(() => alert("링크가 복사되었습니다."))
+			.catch(err => console.error("링크 복사 실패: ", err));
+		});
+		*/
+		 document.getElementById('copy-link-button').addEventListener('click', function() {
+    var linkTextBox = document.getElementById('link-text-box');
+    linkTextBox.style.visibility = 'visible'; // 텍스트 박스를 보이게 합니다.
+    linkTextBox.select(); // 텍스트를 선택합니다.
+    linkTextBox.setSelectionRange(0, 99999); // 모바일 장치를 위해 텍스트를 선택합니다.
+
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? '성공적으로 복사됨' : '복사 실패';
+      alert(msg);
+    } catch (err) {
+      console.error('복사 실패', err);
+    }
+
+    linkTextBox.style.visibility = 'hidden'; // 다시 숨깁니다.
+  });
+    </script>
+
+  </body>
+</html>
