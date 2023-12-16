@@ -147,7 +147,7 @@
 		  // 로딩 완료 시 로딩 텍스트 숨기기
 		  document.querySelector('.loading-text').style.display = 'none';
 		}else{
-			document.querySelector('#progress').innerHTML = progress + "%"
+			document.querySelector('#progress').innerHTML = Math.round(progress*100) + "%"
 		}
 	  }).then((unityInstance) => {
 		// Unity 인스턴스가 준비된 후의 추가적인 설정 (필요한 경우)
