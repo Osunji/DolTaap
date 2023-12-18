@@ -183,6 +183,11 @@
 		  var successful = document.execCommand('copy');
 		  var msg = successful ? '성공적으로 복사됨' : '복사 실패';
 		  alert(msg);
+		  
+		  var canvas = document.getElementById('canvas');
+		  if (canvas) {
+				canvas.focus();
+			}
 		} catch (err) {
 		  console.error('복사 실패', err);
 		}
