@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-    <title>돌탑 - DolTaap v0.3</title>
+    <title>돌탑 - DolTaap v0.6</title>
 	
 	<meta name="google-adsense-account" content="ca-pub-2586374554107449">
 	
@@ -26,13 +26,13 @@
     <!-- Open Graph 메타 정보 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="돌탑 - DolTaap">
-    <meta property="og:description" content="콤보가 끊기지 않게 탑을 쌓는 것은 불가능한 것일까?">
+    <meta property="og:description" content="한번도 무너지지 않고 돌탑을 쌓을 수 있을까?">
     <meta property="og:image" content="Img/ICON.png">
     <meta property="og:url" content="www.doltaap.site">
 
     <!-- 추가 메타 정보 -->
-    <meta name="description" content="돌탑을 쌓는 게임">
-    <meta name="keywords" content="돌탑, 탑쌓기, DolTaap, 퍼즐, 게임">
+    <meta name="description" content="무너지지 않는 돌탑을 쌓아보세요.">
+    <meta name="keywords" content="돌탑, 돌탑게임, 탑쌓기, DolTaap, 퍼즐, 게임, game">
     <!-- 기타 메타 태그 -->
 	
    <style>
@@ -55,11 +55,13 @@
 	}
 
 	#unity-container {
+		display:block;
 		position: relative;
 		width: 360px;
 		height: 720px;
 		background: #FFFFFF;
 		z-index: 1;
+		margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
 	}
 
 	.loading-text {
@@ -106,11 +108,18 @@
 	.share-button:focus {
 		box-shadow: 0px 0px 6px rgba(29, 161, 242, 0.6);
 	}
+	#fp{
+		display: block; /* 블록 레벨 요소로 만들어 줄바를 넓힘 */
+		text-align: center; /* 텍스트를 중앙 정렬 */
+		margin-top: 10px; /* 위쪽 여백 추가 */
+	}
 	
 	@media screen and (max-width: 768px) {
 		#unity-container {
+		display:block;
 			width: 100%;
 			height: auto;
+			margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
 		}
 	}
     </style>
@@ -125,8 +134,6 @@
         <canvas id="unity-canvas" width="360" height="720"></canvas>
 		
 		<div class="share-buttons-container">
-		<!--	<button id="twitter-share-button" class="share-button">Twitter</button>
-			<button id="facebook-share-button" class="share-button">Facebook</button> -->
 			<button id="copy-link-button" class="share-button">Share Link</button>
 			<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
 
@@ -135,6 +142,15 @@
     <div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
 		<span id="progress"></span>
 	</div>
+	
+	
+	<!--
+	<div>
+		<a id = 'fp' href="http://www.freepik.com">Designed by Freepik</a>
+	</div>
+	-->
+	
+	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
      crossorigin="anonymous"></script>
 
@@ -181,7 +197,7 @@
 
 		try {
 		  var successful = document.execCommand('copy');
-		  var msg = successful ? '성공적으로 복사됨' : '복사 실패';
+		  var msg = successful ? '성공적으로 복사됨. Link Copied' : '복사 실패. Copy Failed.';
 		  alert(msg);
 		  
 		  var canvas = document.getElementById('canvas');
@@ -189,7 +205,7 @@
 				canvas.focus();
 			}
 		} catch (err) {
-		  console.error('복사 실패', err);
+		  console.error('복사 실패. Copy Failed.', err);
 		}
 
 		linkTextBox.style.visibility = 'hidden'; // 다시 숨깁니다.
