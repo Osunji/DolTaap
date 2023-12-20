@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-    <title>돌탑 - DolTaap v0.6</title>
+    <title>돌탑 - DolTaap v0.7</title>
 	
 	<meta name="google-adsense-account" content="ca-pub-2586374554107449">
 	
@@ -125,11 +125,7 @@
     </style>
   </head>
   <body style="text-align: center">	
-  <!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBR7QTC9"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+  
     <div id="unity-container">
         <canvas id="unity-canvas" width="360" height="720"></canvas>
 		
@@ -155,7 +151,7 @@
      crossorigin="anonymous"></script>
 
 	<!-- Script -->
-	    <script src="Build/REL.loader.js"></script>
+	<script src="Build/REL.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -211,6 +207,28 @@
 		linkTextBox.style.visibility = 'hidden'; // 다시 숨깁니다.
 	  });
     </script>
+	<script type="module">
+	  // Import the functions you need from the SDKs you need
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+	  // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
 
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  const firebaseConfig = {
+		apiKey: "AIzaSyBgZcwwJxR_FBbnVex5N7Wq4Bma3shddZ0",
+		authDomain: "doltaap.firebaseapp.com",
+		projectId: "doltaap",
+		storageBucket: "doltaap.appspot.com",
+		messagingSenderId: "39299416472",
+		appId: "1:39299416472:web:d48043a26377a9db5a2bed",
+		measurementId: "G-TLB1LJ40HF"
+	  };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	</script>
   </body>
 </html>
