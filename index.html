@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-    <title>돌탑 - DolTaap v0.9</title>
+    <title>돌탑 - DolTaap</title>
 	
 	<meta name="google-adsense-account" content="ca-pub-2586374554107449">
 	
@@ -34,8 +34,7 @@
 		font-weight: normal;
 		font-style: normal;
 	}
-
-	 body, html {
+	body, html {
 		margin: 0;
 		padding: 0;
 		height: 100%;
@@ -44,16 +43,28 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #e0f7fa;
+		/* width:730px; */
 	}
 
-	#unity-container {
-		display:block;
+	.containers-wrapper {
+		display: flex;
+		width:100%;
+		flex-direction: row; /* 가로 방향으로 요소 배치 */
+		overflow-x: auto; /* 가로 스크롤 활성화 */
+		max-width: 100%; /* 최대 가로 크기 제한 */
+	}
+
+	.container {
+		display: block;
 		position: relative;
+		text-align:left;		
 		width: 360px;
 		height: 720px;
-		background: #FFFFFF;
 		z-index: 1;
-		margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
+		margin: 0 5px; /* 양 옆에 마진 추가 */
+		overflow: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 	}
 
 	.loading-text {
@@ -105,7 +116,39 @@
 		text-align: center; /* 텍스트를 중앙 정렬 */
 		margin-top: 10px; /* 위쪽 여백 추가 */
 	}
-	
+
+	.contents {
+		width: 360px;
+		font-family: 'Katuri', sans-serif;
+		border-radius: 10px; /* 둥근 테두리 */
+		border: 3px solid #8dabff; /* 경계선 */
+		overflow-y: auto; /* 세로 스크롤 */
+		padding: 15px; /* 내부 여백 */
+		margin-bottom:10px;
+		box-sizing: border-box; /* 박스 크기 계산 방식 */
+		background: #FFFFFF70;
+	}
+		/*width: 360px; 
+		height: 720px; */
+
+	dt {
+		font-size: 22px; /* 제목 크기 */
+		margin-bottom: 5px; /* 제목과 내용 사이의 간격 */
+	}
+
+	dd {
+		font-size: 17px; /* 내용 크기 */
+		margin-bottom: 15px; /* 다음 내용과의 간격 */
+	}
+
+	.kor {
+		color: #333333; /* 한국어 텍스트 색상 */
+	}
+
+	.eng {
+		color: #999999; /* 영어 텍스트 색상 */
+	}	
+
 	@media screen and (max-width: 768px) {
 		#unity-container {
 		display:block;
@@ -117,17 +160,82 @@
     </style>
   </head>
   <body style="text-align: center">	
-    <div id="unity-container">
-        <canvas id="unity-canvas" width="360" height="720"></canvas>
-		
-		<div class="share-buttons-container">
-			<button id="copy-link-button" class="share-button">Share Link</button>
-			<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
+		<div class="containers-wrapper">
+			<div class="container">
+				<div class="contents">
+					<dt style="font-size:26px!important">
+					 <span class="kor">돌탑 게임 </span>- <span class="eng">DolTaap</span>
+					</td>
+					<dt>
+						<span class="kor">
+							돌탑 :
+						</span>
+						<br />
+						<span class="eng">
+							Stone pagoda :
+						</span>
+					</dt>
+
+					<dd>
+						<span class="kor">
+							한국에서는 예로부터 돌탑을 쌓으면서 소원을 비는 풍습이 있습니다. 
+							일념(한결같이 끊임없는 마음)으로 탑을 쌓아보세요!
+						</span>
+						<br />
+
+						<span class="eng">
+							In Korea, there has been a tradition of stacking stone towers 
+							while making a wish since ancient times. 
+							Stack the tower with a single-minded devotion!
+						</span>
+					</dd>
+				</div>
+				
+				<div class="contents">
+					<dt>
+						<span class="kor">
+							게임 목표 :
+						</span>
+						<br />
+
+						<span class="eng">
+							GameGoal :
+						</span>
+					</dt>
+
+					<dd>
+						<span class="kor">
+							돌들의 모양에 따라 적절한 위치를 찾거나 회전시켜서 쌓아올려보세요.
+							골라인에 닿기 전까지 가능한 무너지지 않을수록, 많은 돌을 쌓을수록 높은 점수를 획득할 수 있어요.
+						</span>
+						<br />
+
+						<span class="eng">
+						Try finding the right position or rotate the stones 
+						according to their shapes to stack them up. 
+						The more stones you stack without collapsing, 
+						and the more stones you pile up before reaching the goal line, 
+						the higher score you can achieve."
+						</span>
+					</dd>
+				</div>
+			</div>
+			
+			<!-- Game Canvas -->
+			<div class="container">
+				<canvas id="unity-canvas" width="360" height="720"></canvas>
+			
+				<div class="share-buttons-container">
+					<button id="copy-link-button" class="share-button">Share Link</button>
+					<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
+				</div>
+
+				<div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
+					<span id="progress"></span>
+				</div>
+			</div>
 
 		</div>
-    </div>
-    <div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
-		<span id="progress"></span>
 	</div>
 	
 	<!--
