@@ -37,6 +37,7 @@
 	body, html {
 		margin: 0;
 		padding: 0;
+		overflow:hidden;
 		height: 100%;
 		display: flex;
 		font-family: 'Katuri', sans-serif;
@@ -50,7 +51,7 @@
 		display: flex;
 		width:100%;
 		flex-direction: row; /* 가로 방향으로 요소 배치 */
-		overflow-x: auto; /* 가로 스크롤 활성화 */
+		overflow-x: none; /* 가로 스크롤 활성화 */
 		max-width: 100%; /* 최대 가로 크기 제한 */
 	}
 
@@ -61,7 +62,6 @@
 		width: 360px;
 		height: 720px;
 		z-index: 1;
-		margin: 0 5px; /* 양 옆에 마진 추가 */
 		overflow: none;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -122,11 +122,20 @@
 		font-family: 'Katuri', sans-serif;
 		border-radius: 10px; /* 둥근 테두리 */
 		border: 3px solid #8dabff; /* 경계선 */
-		overflow-y: auto; /* 세로 스크롤 */
+		overflow-y: none; /* 세로 스크롤 */
 		padding: 15px; /* 내부 여백 */
 		margin-bottom:10px;
 		box-sizing: border-box; /* 박스 크기 계산 방식 */
 		background: #FFFFFF70;
+	}
+
+	.desc{
+			margin-right:10px;
+		}
+
+	.gameCanvas{
+		background: white;
+		/* border:3px solid #8dabff; */
 	}
 		/*width: 360px; 
 		height: 720px; */
@@ -150,22 +159,26 @@
 	}	
 
 	@media screen and (max-width: 768px) {
-		#unity-container {
-		display:block;
+		.container {
+			display:block;
 			width: 100%;
 			height: auto;
 			margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
 		}
+		.desc{
+			display:none;
+		}
+
 	}
     </style>
   </head>
   <body style="text-align: center">	
 		<div class="containers-wrapper">
-			<div class="container">
+			<div class="container desc">
+				<dt style="font-size:26px!important">
+					<span class="kor">돌탑 게임 </span>- <span class="eng">DolTaap</span>
+				</td>
 				<div class="contents">
-					<dt style="font-size:26px!important">
-					 <span class="kor">돌탑 게임 </span>- <span class="eng">DolTaap</span>
-					</td>
 					<dt>
 						<span class="kor">
 							돌탑 :
@@ -222,7 +235,7 @@
 			</div>
 			
 			<!-- Game Canvas -->
-			<div class="container">
+			<div class="container gameCanvas">
 				<canvas id="unity-canvas" width="360" height="720"></canvas>
 			
 				<div class="share-buttons-container">
