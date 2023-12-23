@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
     <title>돌탑 - DolTaap</title>
 	
-	<meta name="google-adsense-account" content="ca-pub-2586374554107449">
-	
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	
-	<!-- ADS -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
-     crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-2586374554107449">
+		
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		
+		<!-- ADS -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
+			crossorigin="anonymous"></script>
 	 
     <!-- Open Graph 메타 정보 -->
     <meta property="og:type" content="website">
@@ -28,158 +28,159 @@
     <!-- 기타 메타 태그 -->
 	
    <style>
-   @font-face {
-		font-family: 'Katuri';
-		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
-	}
-	body, html {
-		margin: 0;
-		padding: 0;
-		overflow:hidden;
-		height: 100%;
-		display: flex;
-		font-family: 'Katuri', sans-serif;
-		justify-content: center;
-		align-items: center;
-		background-color: #e0f7fa;
-	}
-
-	.containers-wrapper {
-		display: flex;
-		width:100%;
-		flex-direction: row; /* 가로 방향으로 요소 배치 */
-		overflow-x: none; /* 가로 스크롤 활성화 */
-		max-width: 100%; /* 최대 가로 크기 제한 */
-	}
-
-	.container {
-		display: block;
-		position: relative;
-		text-align:left;		
-		width: 360px;
-		height: 720px;
-		z-index: 1;
-		overflow: none;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-	}
-
-	.loading-text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		font-family: 'Katuri', sans-serif;
-		font-size: 2rem;
-		color: #0097a7;
-		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-		z-index: 2;
-	}
-	
-	#unity-canvas{
-		width:360px;
-		height:720px;
-	}
-	
-	.share-buttons-container {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		display: flex;
-		gap: 10px; /* 버튼 사이의 간격 */
-	}
-
-	.share-button {
-		padding: 10px 15px;
-		background-color: #1DA1F2;
-		color: white;
-		border: none;
-		border-radius: 5px;
-		font-size: 14px;
-		cursor: pointer;
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-		outline: none;
-	}
-
-	.share-button:hover {
-		background-color: #1991DA;
-	}
-
-	.share-button:focus {
-		box-shadow: 0px 0px 6px rgba(29, 161, 242, 0.6);
-	}
-	#fp{
-		display: block; /* 블록 레벨 요소로 만들어 줄바를 넓힘 */
-		text-align: center; /* 텍스트를 중앙 정렬 */
-		margin-top: 10px; /* 위쪽 여백 추가 */
-	}
-
-	.contents {
-		width: 360px;
-		font-family: 'Katuri', sans-serif;
-		border-radius: 10px; /* 둥근 테두리 */
-		border: 3px solid #8dabff; /* 경계선 */
-		overflow-y: none; /* 세로 스크롤 */
-		padding: 15px; /* 내부 여백 */
-		margin-bottom:10px;
-		box-sizing: border-box; /* 박스 크기 계산 방식 */
-		background: #FFFFFFc0;
-	}
-
-	.desc{
-			margin-right:10px;
+		@font-face {
+			font-family: 'Katuri';
+			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
 		}
 
-	.gameCanvas{
-		background: #FFFFFFc0;
-		/* border:3px solid #8dabff; */
-	}
-		/*width: 360px; 
-		height: 720px; */
+		body, html {
+			margin: 0;
+			padding: 0;
+			overflow:hidden;
+			height: 100%;
+			display: flex;
+			font-family: 'Katuri', sans-serif;
+			justify-content: center;
+			align-items: center;
+			background-color: #e0f7fa;
+		}
 
-	dt {
-		font-size: 22px; /* 제목 크기 */
-		margin-bottom: 5px; /* 제목과 내용 사이의 간격 */
-	}
+		.containers-wrapper {
+			display: flex;
+			width:100%;
+			flex-direction: row; /* 가로 방향으로 요소 배치 */
+			overflow-x: none; /* 가로 스크롤 활성화 */
+			max-width: 100%; /* 최대 가로 크기 제한 */
+		}
 
-	dd {
-		font-size: 17px; /* 내용 크기 */
-		margin-bottom: 15px; /* 다음 내용과의 간격 */
-	}
-
-	.kor {
-		color: #333333; /* 한국어 텍스트 색상 */
-	}
-
-	.eng {
-		color: #999999; /* 영어 텍스트 색상 */
-	}	
-
-	@media screen and (max-width: 768px) {
 		.container {
-			display:block;
-			width: 100%;
-			height: auto;
-			margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
-		}
-		.desc{
-			display:none;
+			display: block;
+			position: relative;
+			text-align:left;		
+			width: 360px;
+			height: 720px;
+			z-index: 1;
+			overflow: none;
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+			margin-right: 10px;
 		}
 
-	}
-    </style>
-  </head>
+		.loading-text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-family: 'Katuri', sans-serif;
+			font-size: 2rem;
+			color: #0097a7;
+			text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+			z-index: 2;
+		}
+		
+		#unity-canvas{
+			width:360px;
+			height:720px;
+		}
+		
+		.share-buttons-container {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			display: flex;
+			gap: 10px; /* 버튼 사이의 간격 */
+		}
+
+		.share-button {
+			padding: 10px 15px;
+			background-color: #1DA1F2;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 14px;
+			cursor: pointer;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+			outline: none;
+		}
+
+		.share-button:hover {
+			background-color: #1991DA;
+		}
+
+		.share-button:focus {
+			box-shadow: 0px 0px 6px rgba(29, 161, 242, 0.6);
+		}
+
+		.contents {
+			width: 360px;
+			font-family: 'Katuri', sans-serif;
+			border-radius: 10px; /* 둥근 테두리 */
+			border: 3px solid #8dabff; /* 경계선 */
+			overflow-y: none; /* 세로 스크롤 */
+			padding: 15px; /* 내부 여백 */
+			margin-bottom:10px;
+			box-sizing: border-box; /* 박스 크기 계산 방식 */
+			background: #FFFFFFc0;
+		}
+
+		.desc{
+		}
+
+		.gameCanvas{
+			background: #FFFFFFc0;
+		}
+
+		dt {
+			font-size: 22px; /* 제목 크기 */
+			margin-bottom: 5px; /* 제목과 내용 사이의 간격 */
+		}
+
+		dd {
+			font-size: 17px; /* 내용 크기 */
+			margin-bottom: 15px; /* 다음 내용과의 간격 */
+		}
+
+		.kor {
+			color: #333333; /* 한국어 텍스트 색상 */
+		}
+
+		.eng {
+			color: #999999; /* 영어 텍스트 색상 */
+		}	
+
+		@media screen and (max-width: 768px) {
+			.container {
+				display:block;
+				width: 100%;
+				height: auto;
+				margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
+			}
+			.forPC{
+				display:none;
+			}
+		}
+	</style>
+
+	<!-- Glide.js CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
+	<!-- Glide.js Script -->
+	<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+
+	</script>
+
+	</head>
   <body style="text-align: center">	
 		<div class="containers-wrapper">
-			<div class="container desc">
+			
+			<div class="container forPC">
 				<div class="contents">
 					<dt style="font-size:25px!important; text-align:center!important">
 						<span class="kor">돌탑게임 - </span>
 
 						<!--####### VERSION #######-->
-						<span class="eng">DolTaap(v0.10)</span>
+						<span class="eng">DolTaap(v0.12)</span>
 					</dt>
 				</div>
 				<div class="contents">
@@ -236,8 +237,119 @@
 						</span>
 					</dd>
 				</div>
+						
+				<div class="contents" style="text-align:center;">
+					LICENSE <a id = '' href="http://www.freepik.com" style="color: cornflowerblue">Designed by Freepik</a>
+				</div>
 			</div>
-			
+
+			<div class="container forPC">
+				<!-- Rule -->
+				<div class="contents">
+					<dt>
+						<span class="kor">
+							기본 규칙 :
+						</span>
+						<br />
+						<span class="eng">
+							Basic Rules :
+						</span>
+					</dt>
+
+					<dd>
+						<ul>
+							<li>
+								<span class="kor">
+									쌓은 돌의 일부가 골라인에 닿은채로 10초를 버티면 성공	
+								</span>
+							</li>
+							<li>
+								<span class="kor">
+									돌을 많이 쌓을수록 높은 점수를 획득
+								</span>
+							</li>
+							<li>
+								<span class="kor">
+									최대 콤보를 달성할수록 보너스 점수를 추가로 획득
+								</span>
+							</li>
+							<li>
+								<span class="kor">
+									돌이 화면밖으로 나갈 때 점수가 차감되며 콤보도 초기화 됨
+								</span>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<span class="eng">
+									The game ends if any part of the stacked stones touched the goal line and remains there for 10 seconds.
+								</span>
+							</li>
+							<li>
+								<span class="eng">
+									Higher scores are awareded for stacking more stones.
+								</span>
+							</li>
+							<li>
+								<span class="eng">
+									Bonus score are given for achieving the max combo.
+								</span>
+							</li>
+							<li>
+								<span class="eng">
+									Scores are deducted and the combo is reset if a stone falls off the screen.
+								</span>
+							</li>
+						</ul>
+						</span>
+					</dd>
+				</div>
+
+				<!-- THEME -->
+				<div class="glide">
+					<div class="glide__track" data-glide-el="track">
+						<ul class="glide__slides" style="margin:0">
+							<!-- 첫 번째 슬라이드 -->
+							<li class="glide__slide">
+								<div class="contents" style="text-align:center">
+									<dt>
+										<span class="kor">기본 테마</span><br />
+										<span class="eng">Basic Theme</span>
+									</dt>
+									<div>
+										<img src="Img/BasicTheme.png">
+									</div>
+								</div>
+							</li>
+							<!-- 두 번째 슬라이드 -->
+							<li class="glide__slide">
+								<div class="contents" style="text-align:center">
+									<dt>
+										<span class="kor">한글 테마</span><br />
+										<span class="eng">Hangeul Theme</span>
+									</dt>
+									<div>
+										<img src="Img/KoreanTheme.png">
+									</div>
+								</div>
+							</li>
+							<!-- 세 번째 슬라이드 -->
+							<li class="glide__slide">
+								<div class="contents" style="text-align:center">
+									<dt>
+										<span class="kor">성탄절 테마</span><br />
+										<span class="eng">Christmas Theme</span>
+									</dt>
+									<div>
+										<img src="Img/ChristmasTheme.png">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 			<!-- Game Canvas -->
 			<div class="container gameCanvas">
 				<canvas id="unity-canvas" width="360" height="720"></canvas>
@@ -247,102 +359,145 @@
 					<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
 				</div>
 
-				<div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
-					<span id="progress"></span>
+				<div id = "loading">
+					<div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
+						<span id="progress"></span>
+					</div>
+				</div>
+			</div>
+
+			<!-- AD : 광고 -->
+			<div class="container forPC">
+				<div class="contents" >
+					<dt>AD</dt>
+					<div>
+						<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
+						crossorigin="anonymous"></script>
+						<!-- side-vertical -->
+						<ins class="adsbygoogle"
+									style="display:block"
+									data-ad-client="ca-pub-2586374554107449"
+									data-ad-slot="1359948004"
+									data-ad-format="auto"
+									data-full-width-responsive="true"></ins>
+						<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
+				</div>
+
+				<div class="contents">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
+							crossorigin="anonymous"></script>
+					<ins class="adsbygoogle"
+							style="display:block; text-align:center;"
+							data-ad-layout="in-article"
+							data-ad-format="fluid"
+							data-ad-client="ca-pub-2586374554107449"
+							data-ad-slot="9976804627"></ins>
+					<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
 				</div>
 			</div>
 
 		</div>
 	</div>
 	
-	<!--
-	<div>
-		<a id = 'fp' href="http://www.freepik.com">Designed by Freepik</a>
-	</div>
-	-->
-	
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
      crossorigin="anonymous"></script>
 
 	<!-- Script -->
 	<script src="Build/REL.loader.js"></script>
-    <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-      }
-	  
-	   createUnityInstance(document.querySelector("#unity-canvas"), {
-		dataUrl: "Build/REL.data",
-		frameworkUrl: "Build/REL.framework.js",
-		codeUrl: "Build/REL.wasm",
-		streamingAssetsUrl: "StreamingAssets",
-		companyName: "Osunji",
-		productName: "DolTaap",
-		productVersion: "0.1",
-	  }, (progress) => {
-		if (progress === 1) {
-		  // 로딩 완료 시 로딩 텍스트 숨기기
-		  document.querySelector('.loading-text').style.display = 'none';
-		}else{
-			document.querySelector('#progress').innerHTML = Math.round(progress*100) + "%"
+	<script>
+		
+		// Carousel by glide
+		new Glide('.glide', {
+			type: 'carousel',
+			startAt: 0,
+			perView: 1,
+			autoplay: 2000, // 자동 슬라이드 (2000ms 마다 넘어감)
+			hoverpause: true, // 마우스 호버 시 자동 슬라이드 멈춤
+			dragThreshold: 120 // 드래그 이벤트 활성화 (드래그 임계값 설정)
+		}).mount();
+		//
+
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+			// Mobile device style: fill the whole browser client area with the game canvas:
+			var meta = document.createElement('meta');
+			meta.name = 'viewport';
+			meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+			document.getElementsByTagName('head')[0].appendChild(meta);
 		}
+	
+		createUnityInstance(document.querySelector("#unity-canvas"), {
+			dataUrl: "Build/REL.data",
+			frameworkUrl: "Build/REL.framework.js",
+			codeUrl: "Build/REL.wasm",
+			streamingAssetsUrl: "StreamingAssets",
+			companyName: "Osunji",
+			productName: "DolTaap",
+			productVersion: "0.1",
+	  }, (progress) => {
+			if (progress === 1) {
+				// 로딩 완료 시 로딩 텍스트 숨기기
+				let child = document.querySelector('.loading-text');
+				document.querySelector("#loading").removeChild(child);
+			}else{
+				document.querySelector('#progress').innerHTML = Math.round(progress*100) + "%"
+			}
 	  }).then((unityInstance) => {
-		// Unity 인스턴스가 준비된 후의 추가적인 설정 (필요한 경우)
+			// Unity 인스턴스가 준비된 후의 추가적인 설정 (필요한 경우)
 	  }).catch((error) => {
-		console.error("Unity instance loading error:", error);
+			console.error("Unity instance loading error:", error);
 	  });	
 	  
-	  
 	  //공유------------------------
-	 
-	 document.getElementById('copy-link-button').addEventListener('click', function() {
-		var linkTextBox = document.getElementById('link-text-box');
-		linkTextBox.style.visibility = 'visible'; // 텍스트 박스를 보이게 합니다.
-		linkTextBox.select(); // 텍스트를 선택합니다.
-		linkTextBox.setSelectionRange(0, 99999); // 모바일 장치를 위해 텍스트를 선택합니다.
+		document.getElementById('copy-link-button').addEventListener('click', function() {
+			var linkTextBox = document.getElementById('link-text-box');
+			linkTextBox.style.visibility = 'visible'; // 텍스트 박스를 보이게 합니다.
+			linkTextBox.select(); // 텍스트를 선택합니다.
+			linkTextBox.setSelectionRange(0, 99999); // 모바일 장치를 위해 텍스트를 선택합니다.
 
-		try {
-		  var successful = document.execCommand('copy');
-		  var msg = successful ? '성공적으로 복사됨. Link Copied' : '복사 실패. Copy Failed.';
-		  alert(msg);
-		  
-		  var canvas = document.getElementById('canvas');
-		  if (canvas) {
-				canvas.focus();
+			try {
+				var successful = document.execCommand('copy');
+				var msg = successful ? '성공적으로 복사됨. Link Copied' : '복사 실패. Copy Failed.';
+				alert(msg);
+				
+				var canvas = document.getElementById('canvas');
+				if (canvas) {
+					canvas.focus();
+				}
+			} catch (err) {
+				console.error('복사 실패. Copy Failed.', err);
 			}
-		} catch (err) {
-		  console.error('복사 실패. Copy Failed.', err);
-		}
 
-		linkTextBox.style.visibility = 'hidden'; // 다시 숨깁니다.
+			linkTextBox.style.visibility = 'hidden'; // 다시 숨깁니다.
 	  });
     </script>
-	<script type="module">
-	  // Import the functions you need from the SDKs you need
-	  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-	  // TODO: Add SDKs for Firebase products that you want to use
-	  // https://firebase.google.com/docs/web/setup#available-libraries
 
-	  // Your web app's Firebase configuration
-	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	  const firebaseConfig = {
-		apiKey: "AIzaSyBgZcwwJxR_FBbnVex5N7Wq4Bma3shddZ0",
-		authDomain: "doltaap.firebaseapp.com",
-		projectId: "doltaap",
-		storageBucket: "doltaap.appspot.com",
-		messagingSenderId: "39299416472",
-		appId: "1:39299416472:web:d48043a26377a9db5a2bed",
-		measurementId: "G-TLB1LJ40HF"
-	  };
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+			import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
 
-	  // Initialize Firebase
-	  const app = initializeApp(firebaseConfig);
-	  const analytics = getAnalytics(app);
-	</script>
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			const firebaseConfig = {
+			apiKey: "AIzaSyBgZcwwJxR_FBbnVex5N7Wq4Bma3shddZ0",
+			authDomain: "doltaap.firebaseapp.com",
+			projectId: "doltaap",
+			storageBucket: "doltaap.appspot.com",
+			messagingSenderId: "39299416472",
+			appId: "1:39299416472:web:d48043a26377a9db5a2bed",
+			measurementId: "G-TLB1LJ40HF"
+			};
+
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+			const analytics = getAnalytics(app);
+		</script>
   </body>
 </html>
