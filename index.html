@@ -44,7 +44,14 @@
 			font-family: 'Katuri', sans-serif;
 			justify-content: center;
 			align-items: center;
-			background-color: #e0f7fa;
+			background-color: #768da5;
+		}
+
+		body{
+			background-image:url(Img/back.jpg);
+			background-size: 50%, 50%;
+			padding-left:80px; 
+			padding-right:80px;
 		}
 
 		.containers-wrapper {
@@ -65,6 +72,9 @@
 			overflow: none;
 			-ms-overflow-style: none;  /* IE and Edge */
 			scrollbar-width: none;  /* Firefox */
+		}
+
+		.container:not(:last-child){
 			margin-right: 10px;
 		}
 
@@ -125,11 +135,9 @@
 			background: #FFFFFFc0;
 		}
 
-		.desc{
-		}
-
 		.gameCanvas{
 			background: #FFFFFFc0;
+			border: 3px solid #577fed; /* 경계선 */
 		}
 
 		dt {
@@ -180,7 +188,7 @@
 						<span class="kor">돌탑게임 - </span>
 
 						<!--####### VERSION #######-->
-						<span class="eng">DolTaap(v0.12)</span>
+						<span class="eng">DolTaap(v1.2)</span>
 					</dt>
 				</div>
 				<div class="contents">
@@ -239,7 +247,7 @@
 				</div>
 						
 				<div class="contents" style="text-align:center;">
-					LICENSE <a id = '' href="http://www.freepik.com" style="color: cornflowerblue">Designed by Freepik</a>
+					Copyright ⓒ 2023. <a href="mailto://evergreen@osunji.com" style="color: cornflowerblue">OSUNJI LC.</a>
 				</div>
 			</div>
 
@@ -399,6 +407,10 @@
 							(adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
 				</div>
+
+				<div class="contents" style="text-align:center;">
+					LICENSE <a id = '' href="http://www.freepik.com" style="color: cornflowerblue">Designed by Freepik</a>
+				</div>
 			</div>
 
 		</div>
@@ -416,7 +428,7 @@
 			type: 'carousel',
 			startAt: 0,
 			perView: 1,
-			autoplay: 2000, // 자동 슬라이드 (2000ms 마다 넘어감)
+			autoplay: 2350, // 자동 슬라이드 (2000ms 마다 넘어감)
 			hoverpause: true, // 마우스 호버 시 자동 슬라이드 멈춤
 			dragThreshold: 120 // 드래그 이벤트 활성화 (드래그 임계값 설정)
 		}).mount();
