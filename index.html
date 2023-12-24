@@ -4,16 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-    <title>돌탑 - DolTaap</title>
-	
+		<!-- adsense -->
 		<meta name="google-adsense-account" content="ca-pub-2586374554107449">
-		
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		
-		<!-- ADS -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
-			crossorigin="anonymous"></script>
 	 
     <!-- Open Graph 메타 정보 -->
     <meta property="og:type" content="website">
@@ -25,160 +17,24 @@
     <!-- 추가 메타 정보 -->
     <meta name="description" content="무너지지 않는 돌탑을 쌓아보세요.">
     <meta name="keywords" content="돌탑, 돌탑게임, 탑쌓기, DolTaap, 퍼즐, 게임, game">
-    <!-- 기타 메타 태그 -->
+		
+		<!-- TITLE -->
+    <title>돌탑 - DolTaap</title>
+
+		<!-- ADS -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586374554107449"
+			crossorigin="anonymous"></script>
 	
-   <style>
-		@font-face {
-			font-family: 'Katuri';
-			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
-			font-weight: normal;
-			font-style: normal;
-		}
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="style.css">
 
-		body, html {
-			margin: 0;
-			padding: 0;
-			overflow:hidden;
-			height: 100%;
-			display: flex;
-			font-family: 'Katuri', sans-serif;
-			justify-content: center;
-			align-items: center;
-			background-color: #768da5;
-		}
-
-		body{
-			background-image:url(Img/back.jpg);
-			background-size: 50%, 50%;
-			padding-left:80px; 
-			padding-right:80px;
-		}
-
-		.containers-wrapper {
-			display: flex;
-			width:100%;
-			flex-direction: row; /* 가로 방향으로 요소 배치 */
-			overflow-x: none; /* 가로 스크롤 활성화 */
-			max-width: 100%; /* 최대 가로 크기 제한 */
-		}
-
-		.container {
-			display: block;
-			position: relative;
-			text-align:left;		
-			width: 360px;
-			height: 720px;
-			z-index: 1;
-			overflow: none;
-			-ms-overflow-style: none;  /* IE and Edge */
-			scrollbar-width: none;  /* Firefox */
-		}
-
-		.container:not(:last-child){
-			margin-right: 10px;
-		}
-
-		.loading-text {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-family: 'Katuri', sans-serif;
-			font-size: 2rem;
-			color: #0097a7;
-			text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-			z-index: 2;
-		}
-		
-		#unity-canvas{
-			width:360px;
-			height:720px;
-		}
-		
-		.share-buttons-container {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			display: flex;
-			gap: 10px; /* 버튼 사이의 간격 */
-		}
-
-		.share-button {
-			padding: 10px 15px;
-			background-color: #1DA1F2;
-			color: white;
-			border: none;
-			border-radius: 5px;
-			font-size: 14px;
-			cursor: pointer;
-			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-			outline: none;
-		}
-
-		.share-button:hover {
-			background-color: #1991DA;
-		}
-
-		.share-button:focus {
-			box-shadow: 0px 0px 6px rgba(29, 161, 242, 0.6);
-		}
-
-		.contents {
-			width: 360px;
-			font-family: 'Katuri', sans-serif;
-			border-radius: 10px; /* 둥근 테두리 */
-			border: 3px solid #8dabff; /* 경계선 */
-			overflow-y: none; /* 세로 스크롤 */
-			padding: 15px; /* 내부 여백 */
-			margin-bottom:10px;
-			box-sizing: border-box; /* 박스 크기 계산 방식 */
-			background: #FFFFFFc0;
-		}
-
-		.gameCanvas{
-			background: #FFFFFFc0;
-			border: 3px solid #577fed; /* 경계선 */
-		}
-
-		dt {
-			font-size: 22px; /* 제목 크기 */
-			margin-bottom: 5px; /* 제목과 내용 사이의 간격 */
-		}
-
-		dd {
-			font-size: 17px; /* 내용 크기 */
-			margin-bottom: 15px; /* 다음 내용과의 간격 */
-		}
-
-		.kor {
-			color: #333333; /* 한국어 텍스트 색상 */
-		}
-
-		.eng {
-			color: #999999; /* 영어 텍스트 색상 */
-		}	
-
-		@media screen and (max-width: 768px) {
-			.container {
-				display:block;
-				width: 100%;
-				height: auto;
-				margin-bottom: 20px; /* 컨테이너와 링크 사이의 간격 */
-			}
-			.forPC{
-				display:none;
-			}
-		}
-	</style>
-
-	<!-- Glide.js CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
-	<!-- Glide.js Script -->
-	<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
-
-	</script>
+		<!-- Glide.js CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
+		<!-- Glide.js Script -->
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
 
 	</head>
+
   <body style="text-align: center">	
 		<div class="containers-wrapper">
 			
@@ -188,7 +44,7 @@
 						<span class="kor">돌탑게임 - </span>
 
 						<!--####### VERSION #######-->
-						<span class="eng">DolTaap(v1.2)</span>
+						<span class="eng">DolTaap(v1.4)</span>
 					</dt>
 				</div>
 				<div class="contents">
@@ -251,7 +107,23 @@
 				</div>
 			</div>
 
-			<div class="container forPC">
+			<!-- Game Canvas -->
+			<div class="container gameCanvas">
+				<canvas id="unity-canvas" width="360" height="720"></canvas>
+			
+				<div class="share-buttons-container">
+					<button id="copy-link-button" class="share-button">Share Link</button>
+					<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
+				</div>
+
+				<div id = "loading">
+					<div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
+						<span id="progress"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="container not1280 notTab forPC">
 				<!-- Rule -->
 				<div class="contents">
 					<dt>
@@ -354,22 +226,6 @@
 								</div>
 							</li>
 						</ul>
-					</div>
-				</div>
-			</div>
-
-			<!-- Game Canvas -->
-			<div class="container gameCanvas">
-				<canvas id="unity-canvas" width="360" height="720"></canvas>
-			
-				<div class="share-buttons-container">
-					<button id="copy-link-button" class="share-button">Share Link</button>
-					<input type="text" id="link-text-box" value="www.doltaap.site" style="visibility: hidden; position: absolute;">
-				</div>
-
-				<div id = "loading">
-					<div class="loading-text">DolTaap<br>GAME<br>IS<br>NOW LOADING<br>
-						<span id="progress"></span>
 					</div>
 				</div>
 			</div>
