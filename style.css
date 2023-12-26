@@ -37,7 +37,7 @@ body{
 	position: relative;
 	text-align:left;		
 	width: 360px;
-	height: 720px;
+	height: 680px;
 	z-index: 1;
 	overflow: none;
 	-ms-overflow-style: none;  /* IE and Edge */
@@ -62,7 +62,7 @@ body{
 
 #unity-canvas{
 	width:360px;
-	height:720px;
+	height:680px;
 }
 
 .share-buttons-container {
@@ -166,6 +166,7 @@ dd {
 		right:0;
 		border: 1px dashed #afff33;
 		display:block;
+    z-index: 999;
 	}
 }
 
